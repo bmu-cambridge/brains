@@ -9,6 +9,7 @@
 % - nperm:  number of permutations to run (50000 seems fairly stable)
 % - PLOTFIGURES: 1 if you want it to plot figures, else use 0
 % - q = FDR Threshold value
+% *note: you can use rb_2DGetPermInput to get the input data in the correct format
 %
 % OUTPUT
 %   Results = Structure with a bunch of output from the analysis
@@ -16,10 +17,10 @@
 % Example usage
 %
 %   % Look at the simple effect of Control>Patients
-%   [Results] = Do_Permutation(Control, Patients, 'nanmean', Mask, Maskidx, 50000, 1, 0.05) 
+%   [Results] = rb_2DPermutation(Control, Patients, 'nanmean', Mask, Maskidx, 50000, 1, 0.05) 
 %
 %
-function [Results] = rb_Permutation(Input1,Input2,CTFUN,Mask,Maskidx,nperm,PLOTFIGURES,q)
+function [Results] = rb_2DPermutation(Input1,Input2,CTFUN,Mask,Maskidx,nperm,PLOTFIGURES,q)
 
 %% Probably built in some sort of check to see if vector dimensions match
 if size(Input1,2)~=size(Input2,2)
